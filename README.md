@@ -12,6 +12,8 @@ Uruchamiamy serwere poleceniem python manage.py runsever.
 Serwer uruchomi się na porcie 8000, jeżeli zostanie uruchomiony na innym porcie należy ten port podać
 w pliku frontend/serp/config/index.js w dev: proxyTable.
 
+Baza danych to PostgreSQL
+
 W pliku settings.py w zmiennej TIME_LIMIT ustawiany jest limit czasowy poniżej którego temu samemu użytkownikowi
 na to samo zapytanie zwracany jest wynik z bazy. Limit podawany jest w sekundach.
 W zmiennej LOG_FILENAME podawana jest ścieżka do plików z logami.
