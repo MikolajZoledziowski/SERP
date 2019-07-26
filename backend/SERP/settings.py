@@ -28,6 +28,10 @@ TIME_LIMIT = 600
 # plik z logami
 LOG_FILENAME = BASE_DIR+'/logging.out'
 
+CX = ''
+
+KEY = ''
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 

@@ -7,7 +7,7 @@ from django.db import models
 class Query(models.Model):
     query = models.CharField(max_length=255)
     ip = models.CharField(max_length=16)
-    date = models.DateTimeField(default=datetime.datetime.now())
+    date = models.DateTimeField(auto_now=True)
     total_result = models.BigIntegerField()
 
 class QueryResult(models.Model):

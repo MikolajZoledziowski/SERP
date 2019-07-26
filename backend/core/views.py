@@ -46,7 +46,7 @@ def get_links(request):
         logging.exception('nieznany błąd podczas sprawdzania czy dany użytkownik wykonał takie zapytanie')
         return JsonResponse({"message": "nieznany błąd"}, status=500, safe=False)
 
-    if len(same_query):
+    if same_query:
         last_query = same_query.last()
         if check_data(last_query.date):
             # To samo zapytanie oraz limit czasowy nie został przekroczony
@@ -62,8 +62,8 @@ def get_links(request):
                 data['most_occur'].append(item.word)
             return JsonResponse(data, safe=False)
     #  Inne zapytanie lub limit czasowy został przekroczony
-    payload = {'q': query, 'cx': '017677803562102401113:iqyaqxpjndo',
-    'key': 'AIzaSyAouNgBS0c-QeQvY3aly05e5VnOLv03NrY'}
+    payload = {'q': query, 'cx': settings.CX,
+    'key': settings.KEY}
     try:
         # W razie przekroczenia dziennego limitu (100) można użyć drugiej wersji
         # r = requests.get("https://www.googleapis.com/customsearch/v1/siterestrict", params=payload)
